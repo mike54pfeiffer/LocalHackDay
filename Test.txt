@@ -7,6 +7,21 @@ public class Calculus{
         int PreC = (int)(Math.random()*5);
         int inputtedAnswer = 0;
         int counter = 0;
+        if (PreC == 1){
+            System.out.println();
+        }       
+        if (PreC == 2){
+            System.out.println();
+        }   
+        if (PreC == 3){
+            System.out.println();
+        }
+        if (PreC == 4){
+            System.out.println();
+        }
+        if (PreC == 5){
+            System.out.println();
+        }
         if (inputtedAnswer == 0){
             counter++;
         }
@@ -14,22 +29,5 @@ public class Calculus{
             counter = 0;
             PreC = (int)(Math.random() *5);
         }
-        if (PreC == 1){
-            
-        }       
-        if (PreC == 2){
-            
-        }   
-        if (PreC == 3){
-            
         }
-        if (PreC == 4){
-            
-        }
-        if (PreC == 5){
-            
-        }
-
-        }
-                
     }   
