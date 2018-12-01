@@ -9,7 +9,7 @@ package localhackday;
  *
  * @author Admin
  */
-public class LocalHackDay {
+public class Calc {
 
     /**
      * @param args the command line arguments

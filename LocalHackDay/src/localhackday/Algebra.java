@@ -9,6 +9,6 @@ package localhackday;
  *
  * @author Admin
  */
-public class NewClass {
+public class Algebra {
     
 }
