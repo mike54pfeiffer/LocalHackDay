@@ -9,10 +9,6 @@ package localhackday;
  *
  * @author Admin
  */
-import java.util.*;
 public class Algebra {
-    public static void main(String[] args){
-    int problem = (int)((Math.random()*25)+1);
-    System.out.print(problem);
-    }
+    
 }
