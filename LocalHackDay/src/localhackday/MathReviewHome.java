@@ -22,40 +22,48 @@ public class MathReviewHome extends JFrame implements ActionListener
 JPanel homePagePanel = new JPanel();
 JLabel headerLabel = new JLabel("Math review questions");
 JLabel promptLabel = new JLabel("Please select a math subject down below");
-String [] mathSubjectList = {"Algebra", "Calculus", "Geometry", "Pre-Algebra", "Pre-Calculus" , "Trigonometry"};
+String [] mathSubjectList = {"Select a math subject","Algebra", "Calculus", "Geometry", "Pre-Algebra", "Pre-Calculus" , "Trigonometry"};
 JComboBox mathSubjectComboBox = new JComboBox(mathSubjectList);
 JButton goButton = new JButton("Go!");
-JButton closeButton = new JButton("Close App");
+
 
 
 public static void main(String [] args)
 {
-MathReviewHome();
+MathReviewHome reviewApp = new MathReviewHome();
+reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
 }
 
- public  MathReviewHome()
+ public MathReviewHome()
 {
     homePagePanel.add(headerLabel);
     homePagePanel.add(promptLabel);
     homePagePanel.add(mathSubjectComboBox);
     homePagePanel.add(goButton);
-    homePagePanel.add(closeButton);
+    mathSubjectComboBox.setSelectedIndex(0);
+    add(homePagePanel);
+    setSize(500,150);
+    setVisible(true);
     addActionListeners();
 }
     
  public void addActionListeners()
  {
      goButton.addActionListener(this);
-     closeButton.addActionListener(this);
  }
 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
-  
+        if(e.getSource()== goButton)
+            changePage();
     }
      
-     
+    
+    public void changePage()
+    {
+        
+    }
  }
  
 
