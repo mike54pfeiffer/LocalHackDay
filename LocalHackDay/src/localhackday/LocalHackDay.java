@@ -18,7 +18,6 @@ public class LocalHackDay {
         // TODO code application logic here
         String test = "Hello World";
         System.out.print(test);
-        xd;lksjlf
     }
     
 }
