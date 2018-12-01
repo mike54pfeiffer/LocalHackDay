@@ -62,8 +62,49 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
     
     public void changePage()
     {
-        
+      if(mathSubjectComboBox.getSelectedIndex() == 1)
+      {
+          closeHomePage();
+          algebraPage();
+      }
+      
+      if(mathSubjectComboBox.getSelectedIndex() == 2)
+      {
+          calculusPage();
+          closeHomePage();
+      }
+      
+      if(mathSubjectComboBox.getSelectedIndex() == 3)
+      {
+          GeometryPage();
+          closeHomePage();
+      }
+      if(mathSubjectComboBox.getSelectedIndex() == 4)
+      {
+          pre-AlgebraPage();
+          closeHomePage();
+      }
+     if(mathSubjectComboBox.getSelectedIndex() == 5)
+     {
+         pre-Calculus();
+         closeHomePage();
+     }
+     
+     if(mathSubjectComboBox.getSelectedIndex() == 6)
+     {
+             trigonometryPage():
+             closeHomePage();
+     }
+     
     }
+    
+      public void closeHomePage()
+     {
+         homePagePanel.setVisible(false);
+     }
+      
+      
+   
  }
  
 
