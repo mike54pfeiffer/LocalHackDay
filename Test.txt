@@ -1,29 +1,32 @@
-package javaapplication3;
+package javaapplication;
+import java.util.Scanner;
 
-public class MathGame{
-
-   
+public class Calculus{
+  
     public static void main(String[] args) {
-        int PreC = (int)(Math.random()*5)+1;
-        if (PreC == 1){
-            
-        }       
-        if (PreC == 2){
-            
-        }   
-        if (PreC == 3){
-            
-        }
-        if (PreC == 4){
-            
-        }
-        if (PreC == 5){
-            
+        Scanner sc = new Scanner(System.in);
+        int inputtedAnswer = 2;
+        int counter = 0;
+        boolean input1 = false;
+        System.out.println(" Find the values of x for which x^2"+
+" − 3x + 2 > 0 (in open intervals):" );
+        do{
+        String input = sc.nextLine();
+        if(input.equals("(-infinity,1),(2,infinity)")){
+            input1 = true;
+            System.out.println("yes");
         }
         else{
-            
-        }
-
-        }
+            System.out.println("Wrong :( Try Again");
+                if(counter == 2){
                 
-    }
+                input1 = true;
+                }
+                counter++;
+            }
+        }
+        
+        while(!input1);
+        
+        }
+        }
