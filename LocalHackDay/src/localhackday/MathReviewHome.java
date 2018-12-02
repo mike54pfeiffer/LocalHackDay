@@ -23,7 +23,7 @@ JPanel homePagePanel = new JPanel();
 JPanel mathPanel = new JPanel();
 JLabel headerLabel = new JLabel("Math review questions");
 JLabel promptLabel = new JLabel("Please select a math subject down below");
-String [] mathSubjectList = {"Select a math subject","Algebra", "Calculus", "Geometry", "Pre-Algebra", "Pre-Calculus" , "Trigonometry"};
+String [] mathSubjectList = {"Select a math subject","Algebra", "Calculus", "Pre-Calculus" , "Trigonometry"};
 JComboBox mathSubjectComboBox = new JComboBox(mathSubjectList);
 JButton goButton = new JButton("Go!");
 JButton backButton = new JButton("back");
@@ -32,6 +32,12 @@ JButton submitButton= new JButton("submit answer");
 JTextArea questionTextArea = new JTextArea(10,60);
 JTextField inputTextField = new JTextField(20);
 JTextField resultTextField = new JTextField(30);
+
+
+Algebra algebraQuestions = new Algebra();
+Calc calculusQuestions = new Calc();
+PreCalc preCalculusQuestions = new PreCalc();
+Trig trigQuestions = new Trig();
 
 //Main method
 public static void main(String [] args)
@@ -129,7 +135,7 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
         mathPanel.setVisible(true);
         questionTextArea.setVisible(true);
         homePagePanel.setVisible(false);
-        setSize(600,600);
+        setSize(600,400);
         selectMathSubject();
     }
     
@@ -174,15 +180,6 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
              
          }
          
-         if(mathSubjectComboBox.getSelectedIndex() == 5)
-         {
-             
-         }
-         
-         if(mathSubjectComboBox.getSelectedIndex() == 6)
-         {
-             
-         }
      }
     }
 
@@ -193,7 +190,8 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
         
            if(mathSubjectComboBox.getSelectedIndex() == 1)
          {
-             
+             String question = algebraQuestions.getQuestion();
+             questionTextArea.setText(question);
          }
              
          if(mathSubjectComboBox.getSelectedIndex() == 2)
@@ -210,16 +208,7 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
          {
              
          }
-         
-         if(mathSubjectComboBox.getSelectedIndex() == 5)
-         {
-             
-         }
-         
-         if(mathSubjectComboBox.getSelectedIndex() == 6)
-         {
-             
-         }
+
       }
    
  }

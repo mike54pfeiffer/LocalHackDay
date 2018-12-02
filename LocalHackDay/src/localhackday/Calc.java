@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Admin
  */
 public class Calc {
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         // TODO code application logic here
         Scanner in = new Scanner(System.in);
         System.out.println("If you know any better don't do calc, you're gonna wanna shoot yourself lmao");
@@ -142,6 +142,6 @@ public class Calc {
      while(!input);   
     }
 
-
+*/
     
 }

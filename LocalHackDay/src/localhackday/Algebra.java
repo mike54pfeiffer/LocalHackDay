@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author Admin
  */
 public class Algebra {
-    public static void main(String[]args) {
+ /*   public void math() {
         Scanner sc = new Scanner(System.in);
         int input = (int)((Math.random()*5) +1);
     if (input == 1){
@@ -109,5 +109,16 @@ public class Algebra {
         }
         System.out.print("Slope = 3");
         }
+    }
+*/
+    public String getQuestion()
+    {
+        String a = "qqqqq";
+        return a;
+    }
+    
+        public Algebra()
+    {
+        
     }
 }
