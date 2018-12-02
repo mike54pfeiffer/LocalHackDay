@@ -20,12 +20,18 @@ public class MathReviewHome extends JFrame implements ActionListener
 
 
 JPanel homePagePanel = new JPanel();
+JPanel mathPanel = new JPanel();
 JLabel headerLabel = new JLabel("Math review questions");
 JLabel promptLabel = new JLabel("Please select a math subject down below");
 String [] mathSubjectList = {"Select a math subject","Algebra", "Calculus", "Geometry", "Pre-Algebra", "Pre-Calculus" , "Trigonometry"};
 JComboBox mathSubjectComboBox = new JComboBox(mathSubjectList);
 JButton goButton = new JButton("Go!");
-
+JButton backButton = new JButton("back");
+JButton clearButton = new JButton("clear");
+JButton submitButton= new JButton("submit answer");
+JTextArea questionTextArea = new JTextArea(10,60);
+JTextField inputTextField = new JTextField(20);
+JTextField resultTextField = new JTextField(30);
 
 
 public static void main(String [] args)
@@ -40,8 +46,14 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
     homePagePanel.add(promptLabel);
     homePagePanel.add(mathSubjectComboBox);
     homePagePanel.add(goButton);
+    mathPanel.add(questionTextArea);
+    mathPanel.add(inputTextField);
+    mathPanel.add(clearButton);
+    mathPanel.add(submitButton);
+    mathPanel.add(backButton);
     mathSubjectComboBox.setSelectedIndex(0);
     add(homePagePanel);
+    mathPanel.setVisible(false);
     setSize(500,150);
     setVisible(true);
     addActionListeners();
@@ -50,59 +62,64 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
  public void addActionListeners()
  {
      goButton.addActionListener(this);
+     backButton.addActionListener(this);
+     clearButton.addActionListener(this);
  }
 
     @Override
     public void actionPerformed(ActionEvent e) 
     {
+         if(mathSubjectComboBox.getSelectedIndex()!=0)
+         {
         if(e.getSource()== goButton)
-            changePage();
+        {
+            openMathPage();
+            clearText();
+        }
+        
+        else if(e.getSource() == backButton)
+        {
+            openHomePage();
+            clearText();
+        }
+        
+        else if(e.getSource() == clearButton)
+            clearText();
+         }
+         else
+         {
+             JOptionPane.showMessageDialog(rootPane, "Please select a math subject");
+             mathSubjectComboBox.requestFocus();
+         }
     }
      
     
-    public void changePage()
+    public void openHomePage() 
     {
-      if(mathSubjectComboBox.getSelectedIndex() == 1)
-      {
-          closeHomePage();
-          algebraPage();
-      }
-      
-      if(mathSubjectComboBox.getSelectedIndex() == 2)
-      {
-          calculusPage();
-          closeHomePage();
-      }
-      
-      if(mathSubjectComboBox.getSelectedIndex() == 3)
-      {
-          GeometryPage();
-          closeHomePage();
-      }
-      if(mathSubjectComboBox.getSelectedIndex() == 4)
-      {
-          pre-AlgebraPage();
-          closeHomePage();
-      }
-     if(mathSubjectComboBox.getSelectedIndex() == 5)
-     {
-         pre-Calculus();
-         closeHomePage();
-     }
-     
-     if(mathSubjectComboBox.getSelectedIndex() == 6)
-     {
-             trigonometryPage():
-             closeHomePage();
-     }
-     
+        remove(mathPanel);
+        add(homePagePanel);
+        setSize(500,150);
+        mathPanel.setVisible(false);
+        homePagePanel.setVisible(true);
+        clearText();
+    }
+
+    public void openMathPage() 
+    {
+        remove(homePagePanel);
+        add(mathPanel);
+        mathPanel.setVisible(true);
+        questionTextArea.setVisible(true);
+        homePagePanel.setVisible(false);
+        setSize(600,600);
     }
     
-      public void closeHomePage()
-     {
-         homePagePanel.setVisible(false);
-     }
-      
+    public void clearText()
+    {
+        inputTextField.setText("");
+    }
+
+
       
    
  }
