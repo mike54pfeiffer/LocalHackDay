@@ -117,8 +117,9 @@ public class Algebra {
         return a;
     }
     
-        public Algebra()
+        public String Algebra()
     {
-        
+    String b ="ssss";
+    return b;
     }
 }
