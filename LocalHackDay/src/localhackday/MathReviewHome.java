@@ -33,13 +33,14 @@ JTextArea questionTextArea = new JTextArea(10,60);
 JTextField inputTextField = new JTextField(20);
 JTextField resultTextField = new JTextField(30);
 
-
+//Main method
 public static void main(String [] args)
 {
 MathReviewHome reviewApp = new MathReviewHome();
 reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
 }
 
+//Constructor
  public MathReviewHome()
 {
     homePagePanel.add(headerLabel);
@@ -64,8 +65,11 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
      goButton.addActionListener(this);
      backButton.addActionListener(this);
      clearButton.addActionListener(this);
+     submitButton.addActionListener(this);
+     inputTextField.addActionListener(this);
  }
 
+ //This method checks if the user has selected a math subject before checking which button had caused the action to occur
     @Override
     public void actionPerformed(ActionEvent e) 
     {
@@ -84,18 +88,31 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
         }
         
         else if(e.getSource() == clearButton)
+        {
             clearText();
+            inputTextField.requestFocus();
+        }
+        
+        else if(e.getSource() == submitButton)
+             submitAnswer();
+        
+        else if(e.getSource() == inputTextField)
+            submitAnswer();
+         
          }
          else
          {
              JOptionPane.showMessageDialog(rootPane, "Please select a math subject");
              mathSubjectComboBox.requestFocus();
          }
+        
+         
     }
      
-    
+    //This method opens up the home page and closes the math page
     public void openHomePage() 
     {
+        mathSubjectComboBox.setSelectedIndex(0);
         remove(mathPanel);
         add(homePagePanel);
         setSize(500,150);
@@ -104,6 +121,7 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
         clearText();
     }
 
+    //This method opens up the math page and closes the home page
     public void openMathPage() 
     {
         remove(homePagePanel);
@@ -112,15 +130,97 @@ reviewApp.setDefaultCloseOperation(EXIT_ON_CLOSE);
         questionTextArea.setVisible(true);
         homePagePanel.setVisible(false);
         setSize(600,600);
+        selectMathSubject();
     }
     
+    //This method will clear the input text field
     public void clearText()
     {
         inputTextField.setText("");
+        questionTextArea.setText("");
     }
 
+    //This method will occur when the submit button is clicked. It will check for any user input in the 
+    //input text area. If the user has put input, the program will then send the answer to the proper class.
+    public void submitAnswer() 
+    {
+        int textSize = inputTextField.getSize().width;
+     if(textSize == 0)
+     {
+         JOptionPane.showMessageDialog(rootPane, "Please enter your answer");
+         inputTextField.requestFocus();
+     }
+     
+     else
+     {
+         clearText();
+         if(mathSubjectComboBox.getSelectedIndex() == 1)
+         {
+             
+         }
+             
+         if(mathSubjectComboBox.getSelectedIndex() == 2)
+         {
+             
+         }
+             
+         if(mathSubjectComboBox.getSelectedIndex() == 3)
+         {
+             
+         }
+                 
+         if(mathSubjectComboBox.getSelectedIndex() == 4)
+         {
+             
+         }
+         
+         if(mathSubjectComboBox.getSelectedIndex() == 5)
+         {
+             
+         }
+         
+         if(mathSubjectComboBox.getSelectedIndex() == 6)
+         {
+             
+         }
+     }
+    }
 
-      
+//this method will check which subject was selected and then call the class from the selected subjct.
+    //The proper will then send back a random question to display on the text area.
+      public void selectMathSubject()
+      {
+        
+           if(mathSubjectComboBox.getSelectedIndex() == 1)
+         {
+             
+         }
+             
+         if(mathSubjectComboBox.getSelectedIndex() == 2)
+         {
+             
+         }
+             
+         if(mathSubjectComboBox.getSelectedIndex() == 3)
+         {
+             
+         }
+                 
+         if(mathSubjectComboBox.getSelectedIndex() == 4)
+         {
+             
+         }
+         
+         if(mathSubjectComboBox.getSelectedIndex() == 5)
+         {
+             
+         }
+         
+         if(mathSubjectComboBox.getSelectedIndex() == 6)
+         {
+             
+         }
+      }
    
  }
  
