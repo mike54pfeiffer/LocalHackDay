@@ -24,9 +24,44 @@ public class Calculus{
                 }
                 counter++;
             }
+        }      
+        while(!input1);
+        System.out.println(" Find the equation for A circle of "
+                + "radius 2, centered at (1, 2).");
+        do{
+        String input = sc.nextLine();
+        if(input.equals("(x-1)^2 + (y-2)^2 = 4")){
+            input1 = true;
+            System.out.println("yes");
+        }
+        else{
+            System.out.println("Wrong :( Try Again");
+                if(counter == 2){
+                
+                input1 = true;
+                }
+                counter++;
+            }
+        }       
+        while(!input1);
+                System.out.println("Find the exact value for sin(π/12)"+
+                        "(Use √ if you need to copy/paste)");
+        do{
+        String input = sc.nextLine();
+        if(input.equals("(√6 -√2)/4")){
+            input1 = true;
+            System.out.println("yes");
+        }
+        else{
+            System.out.println("Wrong :( Try Again");
+                if(counter == 2){
+                
+                input1 = true;
+                }
+                counter++;
+            }
         }
         
         while(!input1);
-        
         }
         }
