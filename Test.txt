@@ -1,33 +1,32 @@
 package javaapplication;
+import java.util.Scanner;
 
 public class Calculus{
-
-   
+  
     public static void main(String[] args) {
-        int PreC = (int)(Math.random()*5);
-        int inputtedAnswer = 0;
+        Scanner sc = new Scanner(System.in);
+        int inputtedAnswer = 2;
         int counter = 0;
-        if (PreC == 1){
-            System.out.println();
-        }       
-        if (PreC == 2){
-            System.out.println();
-        }   
-        if (PreC == 3){
-            System.out.println();
+        boolean input1 = false;
+        System.out.println(" Find the values of x for which x^2"+
+" − 3x + 2 > 0 (in open intervals):" );
+        do{
+        String input = sc.nextLine();
+        if(input.equals("(-infinity,1),(2,infinity)")){
+            input1 = true;
+            System.out.println("yes");
         }
-        if (PreC == 4){
-            System.out.println();
+        else{
+            System.out.println("Wrong :( Try Again");
+                if(counter == 2){
+                
+                input1 = true;
+                }
+                counter++;
+            }
         }
-        if (PreC == 5){
-            System.out.println();
-        }
-        if (inputtedAnswer == 0){
-            counter++;
-        }
-        if (inputtedAnswer == 1){
-            counter = 0;
-            PreC = (int)(Math.random() *5);
+        
+        while(!input1);
+        
         }
         }
-    }   
